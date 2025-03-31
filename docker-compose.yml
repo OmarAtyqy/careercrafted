@@ -1,0 +1,14 @@
+
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Docker/Dockerfile.frontend
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    # If you need environment variables
+    env_file:
+      - .env
