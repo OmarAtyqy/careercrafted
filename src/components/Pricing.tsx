@@ -5,14 +5,16 @@ import { Check } from 'lucide-react';
 
 const pricingPlans = [
   {
-    name: "Free",
-    description: "Basic tools to start your job search",
-    price: "$0",
-    period: "forever",
+    name: "Basic",
+    description: "Essential tools for occasional job seekers",
+    price: "$9",
+    period: "per month",
+    tokens: "50 tokens",
     features: [
+      "50 tokens per month",
       "Basic resume scan",
       "1 cover letter template",
-      "Limited job matching",
+      "Basic job matching",
       "Email support"
     ],
     highlighted: false,
@@ -23,33 +25,35 @@ const pricingPlans = [
     description: "Advanced tools for serious job seekers",
     price: "$19",
     period: "per month",
+    tokens: "200 tokens",
     features: [
+      "200 tokens per month",
       "Advanced resume optimization",
-      "Unlimited cover letter generation",
+      "Unlimited cover letter templates",
       "Priority job matching",
       "Interview preparation",
-      "Priority email support",
-      "Performance tracking"
+      "Priority email support"
     ],
     highlighted: true,
     buttonText: "Get Started",
     badge: "Most Popular"
   },
   {
-    name: "Enterprise",
+    name: "Premium",
     description: "Complete solution for career advancement",
-    price: "$49",
+    price: "$39",
     period: "per month",
+    tokens: "500 tokens",
     features: [
+      "500 tokens per month",
       "Everything in Pro",
-      "Career coaching sessions",
       "LinkedIn profile optimization",
       "Salary negotiation tools",
       "Priority phone support",
       "Custom job search strategy"
     ],
     highlighted: false,
-    buttonText: "Contact Us"
+    buttonText: "Get Started"
   }
 ];
 
@@ -86,9 +90,13 @@ const Pricing = () => {
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                 <p className="text-gray-600 mb-6">{plan.description}</p>
                 
-                <div className="mb-6">
+                <div className="mb-2">
                   <span className="text-4xl font-bold">{plan.price}</span>
                   <span className="text-gray-500 ml-2">{plan.period}</span>
+                </div>
+                
+                <div className="mb-6">
+                  <span className="text-lg text-brand-blue font-semibold">{plan.tokens}</span>
                 </div>
                 
                 <ul className="space-y-4 mb-8">
